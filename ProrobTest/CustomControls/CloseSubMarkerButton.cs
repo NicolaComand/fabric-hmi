@@ -43,6 +43,7 @@ namespace ProrobTest.CustomControls
                     break;
             }
 
+
             this.UpdateProperty(enabled);
         }
 

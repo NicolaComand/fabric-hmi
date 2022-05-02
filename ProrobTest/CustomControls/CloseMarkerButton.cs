@@ -34,6 +34,7 @@ namespace ProrobTest.CustomControls
                 case MarkerCreator.State.SUB_MARKER_VALID:
                     break;
                 case MarkerCreator.State.SUB_MARKER_CLOSED:
+                    enabled = true;
                     break;
                 case MarkerCreator.State.VALID_MARKER_WITH_SUBMARKERS:
                     enabled = true;
@@ -43,6 +44,7 @@ namespace ProrobTest.CustomControls
                 default:
                     break;
             }
+
 
             this.UpdateProperty(enabled);
         }

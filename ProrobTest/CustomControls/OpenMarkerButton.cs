@@ -26,6 +26,7 @@ namespace ProrobTest.CustomControls
                 case MarkerCreator.State.IDLE_NOT_FIRST_MARKER:
                     break;
                 case MarkerCreator.State.IDLE_NOTE_FIRST_MARKER_START_ENABLED:
+                    enabled = true;
                     break;
                 case MarkerCreator.State.SUB_MARKER_ENABLE_START:
                     break;
@@ -42,6 +43,7 @@ namespace ProrobTest.CustomControls
                 default:
                     break;
             }
+
 
             this.UpdateProperty(enabled);
         }

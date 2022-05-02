@@ -12,14 +12,14 @@ using System.IO;
 
 namespace ProrobTest
 {
-    public partial class Form1 : Form
+    public partial class MainWIndow : Form
     {
         List<Marker> markerList = new List<Marker>();
         MarkerCreator markerCreator;
 
         List<IObserver> _observerList = new List<IObserver>();
 
-        public Form1()      {
+        public MainWIndow()      {
             
 
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace ProrobTest
 
         public void InitializeMarkerCreator()
         {
-            markerCreator = new MarkerCreator(sliderSetPosition.Value);
+            markerCreator = new MarkerCreator(customTrackBar.Value);
             // Add Observers
 
             _observerList.Add(sliderPositionLabel);
@@ -44,6 +44,7 @@ namespace ProrobTest
             _observerList.Add(closeMarkerButton);
             _observerList.Add(confirmButton);
             _observerList.Add(annullaButton);
+            _observerList.Add(customTrackBar);
 
 
 
@@ -160,6 +161,13 @@ namespace ProrobTest
 
 
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
 
 
 

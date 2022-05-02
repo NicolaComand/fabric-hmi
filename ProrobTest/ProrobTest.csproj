@@ -95,6 +95,9 @@
     <Compile Include="CustomControls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomControls\CustomTrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CustomControls\DebugStateLabel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -113,19 +116,22 @@
     <Compile Include="CustomControls\MarkerPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="CustomControls\WatchLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MainWIndow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainWIndow.Designer.cs">
+      <DependentUpon>MainWIndow.cs</DependentUpon>
     </Compile>
     <Compile Include="Marker.cs" />
     <Compile Include="MarkerCreator.cs" />
     <Compile Include="Observer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MainWIndow.resx">
+      <DependentUpon>MainWIndow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -135,6 +141,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -149,6 +156,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoCaron.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonStart.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonStop.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonStopSubMarker.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonStartSubMarker.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonStopSubMarker_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonStart_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonStop_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonStartSubMarker_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonAnnulla.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonConfirm.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SideControls.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpperControls.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonUscita.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.3\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.3\build\System.Text.Json.targets')" />

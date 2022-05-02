@@ -13,8 +13,8 @@ namespace ProrobTest
         public int actualSliderPosition { get { return _actualSliderPosition; } set { _actualSliderPosition = value; this.NotifyObservers(0); this.CheckConditions(); } }
 
         int markerStart = 0;
-        
 
+        public int maximumPosition = 4000;
         int markersDistance = 50;
 
         public Marker creatingMarker;
@@ -113,15 +113,27 @@ namespace ProrobTest
             tempMarkerWidth = actualSliderPosition - markerStart;
             tempSubMarkerWidth = actualSliderPosition - subMarkerStart;
 
+            bool condition;
+
             switch (stato)
-            {
+            {              
 
                 case State.IDLE:
                     // Initial condition, no markers or submarkers
                     break;
                 case State.MARKER_NOT_VALID:
 
-                    if (tempMarkerWidth > 0)
+                    if (markerList.Count == 0)
+                    {
+                        condition = tempMarkerWidth > 0;
+                    }
+                    else
+                    {
+                        condition = tempMarkerWidth > 0 && actualSliderPosition > markerList.Last().stopPosition;
+                    }
+
+
+                    if (condition)
                     {
                         stato = State.MARKER_VALID;
                         //CheckConditions();
@@ -130,7 +142,18 @@ namespace ProrobTest
 
                 case State.MARKER_VALID:
 
-                    if (tempMarkerWidth <= 0)
+                    
+
+                    if (markerList.Count == 0)
+                    {
+                        condition = tempMarkerWidth <= 0;
+                    }
+                    else
+                    {
+                        condition = tempMarkerWidth <= 0 || actualSliderPosition < markerList.Last().stopPosition;
+                    }
+
+                    if (condition)
                     {
                         stato = State.MARKER_NOT_VALID;
                         //CheckConditions();
@@ -220,6 +243,19 @@ namespace ProrobTest
                     {
                         stato = State.VALID_MARKER_WITH_SUBMARKERS;
                     }
+                    else if (actualSliderPosition <= creatingMarker.subMarkers.Last().startPosition)
+                    {
+                        stato = State.INVALID_MARKER_AND_SUBMARKER;
+                    }
+                    break;
+                case State.INVALID_MARKER_AND_SUBMARKER:
+
+                    if (actualSliderPosition > creatingMarker.subMarkers.Last().startPosition)
+                    {
+                        stato = State.INVALID_MARKER_WITH_SUBMARKERS;
+                    }
+
+
                     break;
 
 
@@ -254,7 +290,8 @@ namespace ProrobTest
             SUB_MARKER_VALID,
             SUB_MARKER_CLOSED,
             VALID_MARKER_WITH_SUBMARKERS,
-            INVALID_MARKER_WITH_SUBMARKERS
+            INVALID_MARKER_WITH_SUBMARKERS,
+            INVALID_MARKER_AND_SUBMARKER,
             //NOT_FIRST_MARKER_VALID
         }
 
