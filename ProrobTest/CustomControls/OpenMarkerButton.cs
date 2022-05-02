@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ProrobTest.CustomControls
 {
@@ -22,6 +19,7 @@ namespace ProrobTest.CustomControls
                 case MarkerCreator.State.MARKER_NOT_VALID:
                     break;
                 case MarkerCreator.State.MARKER_VALID:
+                    enabled = true;
                     break;
                 case MarkerCreator.State.IDLE_NOT_FIRST_MARKER:
                     break;

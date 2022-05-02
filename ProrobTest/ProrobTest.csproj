@@ -77,6 +77,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomColor.cs" />
+    <Compile Include="CustomControls\CurrentPositionLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CustomControls\AnnullaButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -104,6 +107,15 @@
     <Compile Include="CustomControls\InfoLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomControls\MarkersLength.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\NMarkerLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\NSplicesLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CustomControls\OpenMarkerButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -116,9 +128,13 @@
     <Compile Include="CustomControls\MarkerPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomControls\TotalLengthLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CustomControls\WatchLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ExportObjects.cs" />
     <Compile Include="MainWIndow.cs">
       <SubType>Form</SubType>
     </Compile>

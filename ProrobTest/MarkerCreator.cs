@@ -10,7 +10,9 @@ namespace ProrobTest
     {
         //public int actualSliderPosition;
         private int _actualSliderPosition;
-        public int actualSliderPosition { get { return _actualSliderPosition; } set { _actualSliderPosition = value; this.NotifyObservers(0); this.CheckConditions(); } }
+        public int actualSliderPosition { get { return _actualSliderPosition; } set { _actualSliderPosition = value; currentPosition = maximumPosition - value; this.NotifyObservers(0); this.CheckConditions(); } }
+        private int _currentPosition;
+        public int currentPosition { get { return _currentPosition; } set { _currentPosition = value;} }
 
         int markerStart = 0;
 
@@ -22,6 +24,11 @@ namespace ProrobTest
         //Marker completedSubMarker = new Marker();
 
         int subMarkerStart = 0;
+
+        // HMI properties
+        public int totalLength = 0;
+        public int markersLength = 0;
+        
 
 
         public List<Marker> markerList = new List<Marker>();

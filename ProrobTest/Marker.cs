@@ -35,15 +35,20 @@ namespace ProrobTest
             jsonString += "\"Offset\":" + offset.ToString() + ",\n";  // TODO
             jsonString += "\"Start\":" + startPosition.ToString() + ",\n";
             jsonString += "\"Stop\":" + stopPosition.ToString() + ",\n";
-            jsonString += "\"Splices\": [\n";
+            jsonString += "\"Splices\": [";
 
             foreach (Marker subm in subMarkers)
             {
-                jsonString += "{\n";
+                jsonString += "\n{\n";
                 jsonString += "\"MarkerIndex\":" + index.ToString() + ",\n";
                 jsonString += "\"Start\":" + subm.startPosition.ToString() + ",\n";
                 jsonString += "\"Stop\":" + subm.stopPosition.ToString() + "\n";
                 jsonString += "}\n";
+
+                //if (subm.index = subMarkers.Count - 1)
+                //{
+
+                //} 
             }
 
             jsonString += "]\n";

@@ -1,14 +1,12 @@
 ﻿namespace ProrobTest
 {
-    class DebugStateLabel : InfoLabel, IObserver
+    class CurrentPositionLabel : InfoLabel, IObserver
     {
-        
         public void Update(Observable from, int e)
         {
             MarkerCreator markerCreator = (MarkerCreator)from;
 
-            this.UpdateProperty(markerCreator.stato.ToString());
-
+            this.UpdateProperty(markerCreator.currentPosition.ToString());
         }
     }
 }

@@ -33,47 +33,52 @@ namespace ProrobTest
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.watchLabel1 = new ProrobTest.WatchLabel();
-            this.customTrackBar = new ProrobTest.CustomTrackBar();
-            this.debugStateLabel = new ProrobTest.DebugStateLabel();
-            this.markerPanel = new ProrobTest.MarkerPanel();
-            this.cursorPanel = new ProrobTest.CursorPanel();
-            this.sliderPositionLabel1 = new ProrobTest.SliderPositionLabel();
-            this.sliderPositionLabel = new ProrobTest.SliderPositionLabel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.exitButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.totalLengthLabel = new ProrobTest.CustomControls.TotalLengthLabel();
+            this.nMarkerLabel = new ProrobTest.CustomControls.NMarkerLabel();
+            this.nSplicesLabel = new ProrobTest.CustomControls.NSplicesLabel();
+            this.currentPositionLabel = new ProrobTest.CurrentPositionLabel();
+            this.watchLabel1 = new ProrobTest.WatchLabel();
+            this.debugStateLabel = new ProrobTest.DebugStateLabel();
+            this.markerPanel = new ProrobTest.MarkerPanel();
+            this.cursorPanel = new ProrobTest.CursorPanel();
+            this.sliderPositionLabel1 = new ProrobTest.SliderPositionLabel();
+            this.sliderPositionLabel = new ProrobTest.SliderPositionLabel();
             this.closeMarkerButton = new ProrobTest.CustomControls.CloseMarkerButton();
             this.closeSubMarkerButton = new ProrobTest.CustomControls.CloseSubMarkerButton();
             this.openMarkerButton = new ProrobTest.CustomControls.OpenMarkerButton();
             this.openSubMarkerButton = new ProrobTest.CustomControls.OpenSubMarkerButton();
             this.annullaButton = new ProrobTest.CustomControls.AnnullaButton();
             this.confirmButton = new ProrobTest.CustomControls.ConfirmButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.customTrackBar = new ProrobTest.CustomTrackBar();
+            this.markersLength1 = new ProrobTest.CustomControls.MarkersLength();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -108,69 +113,35 @@ namespace ProrobTest
             this.panel1.Size = new System.Drawing.Size(1302, 87);
             this.panel1.TabIndex = 21;
             // 
-            // watchLabel1
+            // pictureBox4
             // 
-            this.watchLabel1.AutoSize = true;
-            this.watchLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.watchLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
-            this.watchLabel1.Location = new System.Drawing.Point(1181, 30);
-            this.watchLabel1.Name = "watchLabel1";
-            this.watchLabel1.Size = new System.Drawing.Size(91, 26);
-            this.watchLabel1.TabIndex = 1;
-            this.watchLabel1.Text = "8:11:20";
+            this.pictureBox4.Image = global::ProrobTest.Properties.Resources.UpperControls;
+            this.pictureBox4.Location = new System.Drawing.Point(521, 13);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(519, 66);
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
             // 
-            // customTrackBar
+            // exitButton
             // 
-            this.customTrackBar.Location = new System.Drawing.Point(393, 811);
-            this.customTrackBar.Name = "customTrackBar";
-            this.customTrackBar.Size = new System.Drawing.Size(603, 45);
-            this.customTrackBar.TabIndex = 18;
-            this.customTrackBar.Scroll += new System.EventHandler(this.sliderSetPosition_Scroll);
+            this.exitButton.FlatAppearance.BorderSize = 0;
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Image = global::ProrobTest.Properties.Resources.ButtonUscita;
+            this.exitButton.Location = new System.Drawing.Point(1104, 19);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(54, 48);
+            this.exitButton.TabIndex = 2;
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // debugStateLabel
+            // pictureBox1
             // 
-            this.debugStateLabel.AutoSize = true;
-            this.debugStateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.debugStateLabel.Location = new System.Drawing.Point(176, 115);
-            this.debugStateLabel.Name = "debugStateLabel";
-            this.debugStateLabel.Size = new System.Drawing.Size(188, 26);
-            this.debugStateLabel.TabIndex = 11;
-            this.debugStateLabel.Text = "debugStateLabel1";
-            // 
-            // markerPanel
-            // 
-            this.markerPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.markerPanel.Location = new System.Drawing.Point(148, 318);
-            this.markerPanel.Name = "markerPanel";
-            this.markerPanel.Size = new System.Drawing.Size(1120, 143);
-            this.markerPanel.TabIndex = 10;
-            // 
-            // cursorPanel
-            // 
-            this.cursorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cursorPanel.Location = new System.Drawing.Point(148, 292);
-            this.cursorPanel.Name = "cursorPanel";
-            this.cursorPanel.Size = new System.Drawing.Size(1120, 20);
-            this.cursorPanel.TabIndex = 9;
-            // 
-            // sliderPositionLabel1
-            // 
-            this.sliderPositionLabel1.AutoSize = true;
-            this.sliderPositionLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sliderPositionLabel1.Location = new System.Drawing.Point(678, 137);
-            this.sliderPositionLabel1.Name = "sliderPositionLabel1";
-            this.sliderPositionLabel1.Size = new System.Drawing.Size(64, 26);
-            this.sliderPositionLabel1.TabIndex = 2;
-            this.sliderPositionLabel1.Text = "4000";
-            // 
-            // sliderPositionLabel
-            // 
-            this.sliderPositionLabel.AutoSize = true;
-            this.sliderPositionLabel.Location = new System.Drawing.Point(491, 779);
-            this.sliderPositionLabel.Name = "sliderPositionLabel";
-            this.sliderPositionLabel.Size = new System.Drawing.Size(100, 13);
-            this.sliderPositionLabel.TabIndex = 2;
-            this.sliderPositionLabel.Text = "sliderPositionLabel1";
+            this.pictureBox1.Image = global::ProrobTest.Properties.Resources.LogoCaron;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(231, 62);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -237,6 +208,26 @@ namespace ProrobTest
             this.panel2.Size = new System.Drawing.Size(1120, 164);
             this.panel2.TabIndex = 24;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(70, 7);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(59, 17);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "START";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(1001, 7);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 17);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "STOP";
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -284,35 +275,121 @@ namespace ProrobTest
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox4
+            // label8
             // 
-            this.pictureBox4.Image = global::ProrobTest.Properties.Resources.UpperControls;
-            this.pictureBox4.Location = new System.Drawing.Point(521, 13);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(519, 66);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(221, 641);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 26);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "AC";
             // 
-            // exitButton
+            // label9
             // 
-            this.exitButton.FlatAppearance.BorderSize = 0;
-            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Image = global::ProrobTest.Properties.Resources.ButtonUscita;
-            this.exitButton.Location = new System.Drawing.Point(1104, 19);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(54, 48);
-            this.exitButton.TabIndex = 2;
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(1153, 641);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 26);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "LD";
             // 
-            // pictureBox1
+            // totalLengthLabel
             // 
-            this.pictureBox1.Image = global::ProrobTest.Properties.Resources.LogoCaron;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(231, 62);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.totalLengthLabel.AutoSize = true;
+            this.totalLengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalLengthLabel.Location = new System.Drawing.Point(221, 221);
+            this.totalLengthLabel.Name = "totalLengthLabel";
+            this.totalLengthLabel.Size = new System.Drawing.Size(25, 26);
+            this.totalLengthLabel.TabIndex = 30;
+            this.totalLengthLabel.Text = "0";
+            // 
+            // nMarkerLabel
+            // 
+            this.nMarkerLabel.AutoSize = true;
+            this.nMarkerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nMarkerLabel.Location = new System.Drawing.Point(883, 221);
+            this.nMarkerLabel.Name = "nMarkerLabel";
+            this.nMarkerLabel.Size = new System.Drawing.Size(25, 26);
+            this.nMarkerLabel.TabIndex = 29;
+            this.nMarkerLabel.Text = "0";
+            // 
+            // nSplicesLabel
+            // 
+            this.nSplicesLabel.AutoSize = true;
+            this.nSplicesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nSplicesLabel.Location = new System.Drawing.Point(659, 221);
+            this.nSplicesLabel.Name = "nSplicesLabel";
+            this.nSplicesLabel.Size = new System.Drawing.Size(25, 26);
+            this.nSplicesLabel.TabIndex = 28;
+            this.nSplicesLabel.Text = "0";
+            // 
+            // currentPositionLabel
+            // 
+            this.currentPositionLabel.AutoSize = true;
+            this.currentPositionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentPositionLabel.Location = new System.Drawing.Point(684, 136);
+            this.currentPositionLabel.Name = "currentPositionLabel";
+            this.currentPositionLabel.Size = new System.Drawing.Size(64, 26);
+            this.currentPositionLabel.TabIndex = 27;
+            this.currentPositionLabel.Text = "4000";
+            // 
+            // watchLabel1
+            // 
+            this.watchLabel1.AutoSize = true;
+            this.watchLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.watchLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
+            this.watchLabel1.Location = new System.Drawing.Point(1181, 30);
+            this.watchLabel1.Name = "watchLabel1";
+            this.watchLabel1.Size = new System.Drawing.Size(91, 26);
+            this.watchLabel1.TabIndex = 1;
+            this.watchLabel1.Text = "9:18:01";
+            // 
+            // debugStateLabel
+            // 
+            this.debugStateLabel.AutoSize = true;
+            this.debugStateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.debugStateLabel.Location = new System.Drawing.Point(176, 115);
+            this.debugStateLabel.Name = "debugStateLabel";
+            this.debugStateLabel.Size = new System.Drawing.Size(188, 26);
+            this.debugStateLabel.TabIndex = 11;
+            this.debugStateLabel.Text = "debugStateLabel1";
+            // 
+            // markerPanel
+            // 
+            this.markerPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.markerPanel.Location = new System.Drawing.Point(148, 318);
+            this.markerPanel.Name = "markerPanel";
+            this.markerPanel.Size = new System.Drawing.Size(1120, 143);
+            this.markerPanel.TabIndex = 10;
+            // 
+            // cursorPanel
+            // 
+            this.cursorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cursorPanel.Location = new System.Drawing.Point(148, 292);
+            this.cursorPanel.Name = "cursorPanel";
+            this.cursorPanel.Size = new System.Drawing.Size(1120, 20);
+            this.cursorPanel.TabIndex = 9;
+            // 
+            // sliderPositionLabel1
+            // 
+            this.sliderPositionLabel1.AutoSize = true;
+            this.sliderPositionLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sliderPositionLabel1.Location = new System.Drawing.Point(1120, 221);
+            this.sliderPositionLabel1.Name = "sliderPositionLabel1";
+            this.sliderPositionLabel1.Size = new System.Drawing.Size(64, 26);
+            this.sliderPositionLabel1.TabIndex = 2;
+            this.sliderPositionLabel1.Text = "4000";
+            // 
+            // sliderPositionLabel
+            // 
+            this.sliderPositionLabel.AutoSize = true;
+            this.sliderPositionLabel.Location = new System.Drawing.Point(491, 779);
+            this.sliderPositionLabel.Name = "sliderPositionLabel";
+            this.sliderPositionLabel.Size = new System.Drawing.Size(100, 13);
+            this.sliderPositionLabel.TabIndex = 2;
+            this.sliderPositionLabel.Text = "sliderPositionLabel1";
             // 
             // closeMarkerButton
             // 
@@ -386,51 +463,34 @@ namespace ProrobTest
             this.confirmButton.UseVisualStyleBackColor = true;
             this.confirmButton.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
-            // label8
+            // customTrackBar
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(221, 641);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 26);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "AC";
+            this.customTrackBar.Location = new System.Drawing.Point(393, 811);
+            this.customTrackBar.Name = "customTrackBar";
+            this.customTrackBar.Size = new System.Drawing.Size(603, 45);
+            this.customTrackBar.TabIndex = 18;
+            this.customTrackBar.Scroll += new System.EventHandler(this.sliderSetPosition_Scroll);
             // 
-            // label9
+            // markersLength1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1153, 641);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 26);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "LD";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(70, 7);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(59, 17);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "START";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(1001, 7);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 17);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "STOP";
+            this.markersLength1.AutoSize = true;
+            this.markersLength1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.markersLength1.Location = new System.Drawing.Point(468, 221);
+            this.markersLength1.Name = "markersLength1";
+            this.markersLength1.Size = new System.Drawing.Size(25, 26);
+            this.markersLength1.TabIndex = 31;
+            this.markersLength1.Text = "0";
             // 
             // MainWIndow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1302, 868);
+            this.Controls.Add(this.markersLength1);
+            this.Controls.Add(this.totalLengthLabel);
+            this.Controls.Add(this.nMarkerLabel);
+            this.Controls.Add(this.nSplicesLabel);
+            this.Controls.Add(this.currentPositionLabel);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -457,7 +517,8 @@ namespace ProrobTest
             this.Text = "9";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -465,8 +526,7 @@ namespace ProrobTest
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -507,6 +567,11 @@ namespace ProrobTest
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private CurrentPositionLabel currentPositionLabel;
+        private CustomControls.NSplicesLabel nSplicesLabel;
+        private CustomControls.NMarkerLabel nMarkerLabel;
+        private CustomControls.TotalLengthLabel totalLengthLabel;
+        private CustomControls.MarkersLength markersLength1;
     }
 }
 

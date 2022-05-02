@@ -4,8 +4,8 @@ namespace ProrobTest
 {
     public class CustomTrackBar : System.Windows.Forms.TrackBar, IObserver
     {
-        private delegate void _UpdateProperty(int maxValue);
 
+        private delegate void _UpdateProperty(int maxValue);
         protected void UpdateProperty(int maxValue)
         {
             if (this.InvokeRequired)
