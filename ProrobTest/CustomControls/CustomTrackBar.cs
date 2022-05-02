@@ -18,11 +18,11 @@ namespace ProrobTest
 
         }
 
-        public void Update(Observable observable, int e)
+        public void Update(Observable observable)
         {
             MarkerCreatorClass markerCreator = (MarkerCreatorClass)observable;
 
-            this.UpdateProperty(markerCreator.maximumPosition);
+            this.UpdateProperty(markerCreator.MaximumPosition);
         }
     }
 }

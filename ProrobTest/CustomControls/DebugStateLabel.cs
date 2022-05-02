@@ -2,11 +2,11 @@
 {
     class DebugStateLabel : InfoLabel, IObserver
     {       
-        public void Update(Observable from, int e)
+        public void Update(Observable from)
         {
             MarkerCreatorClass markerCreator = (MarkerCreatorClass)from;
 
-            this.UpdateProperty(markerCreator.stato.ToString());
+            this.UpdateProperty(markerCreator.Stato.ToString());
 
         }
     }

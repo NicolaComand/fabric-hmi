@@ -24,108 +24,102 @@ namespace ProrobTest
             INVALID_MARKER_AND_SUBMARKER
         }
 
-
-
         private int _actualSliderPosition;
-        public int actualSliderPosition { get { return _actualSliderPosition; } set { _actualSliderPosition = value; currentPosition = maximumPosition - value; this.NotifyObservers(0); this.CheckConditions(); } }
+        public int ActualSliderPosition { get { return _actualSliderPosition; } set { _actualSliderPosition = value; CurrentPosition = MaximumPosition - value; this.NotifyObservers(0); this.CheckConditions(); } }
         private int _currentPosition;
-        public int currentPosition { get { return _currentPosition; } set { _currentPosition = value; } }
+        public int CurrentPosition { get { return _currentPosition; } set { _currentPosition = value; } }
         private State _stato = State.IDLE;
-        public State stato { get { return _stato; } set { _stato = value; this.NotifyObservers(0); } }
-        public List<Marker> markerList = new List<Marker>();
+        public State Stato { get { return _stato; } set { _stato = value; this.NotifyObservers(0); } }
+        public List<Marker> MarkerList = new List<Marker>();
         
         // Temporary objects used during marker building
-        public Marker creatingMarker;
-        public Marker creatingSubMarker;
+        public Marker CreatingMarker;
+        public Marker CreatingSubMarker;
 
         // Settings
-        public int maximumPosition = 4000;
-        int markersDistance = 50;
-            
+        public int MaximumPosition = 4000;
+        public int MarkersDistance = 50;            
 
         public MarkerCreatorClass()
         {
         }
         public MarkerCreatorClass(int position)
         {
-            actualSliderPosition = position;
+            ActualSliderPosition = position;
         }
 
         public void OpenMarker()
         {
-            creatingMarker = new Marker
+            CreatingMarker = new Marker
             {
-                startPosition = actualSliderPosition,
-                index = markerList.Count,
-                offset = markersDistance
+                startPosition = ActualSliderPosition,
+                index = MarkerList.Count,
+                offset = MarkersDistance
             };
 
-            stato = State.MARKER_NOT_VALID;
+            Stato = State.MARKER_NOT_VALID;
         }
         public void AutoOpenMarker(int position)
         {
-            creatingMarker = new Marker
+            CreatingMarker = new Marker
             {
                 startPosition = position,
-                index = markerList.Count,
-                offset = markersDistance
+                index = MarkerList.Count,
+                offset = MarkersDistance
             };
 
-            stato = State.MARKER_NOT_VALID;
+            Stato = State.MARKER_NOT_VALID;
         }
 
         public void CloseMarker()
         {
-            creatingMarker.stopPosition = actualSliderPosition;
-            markerList.Add(creatingMarker);
-            creatingMarker = null;
+            CreatingMarker.stopPosition = ActualSliderPosition;
+            MarkerList.Add(CreatingMarker);
+            CreatingMarker = null;
 
-            stato = State.IDLE_NOTE_FIRST_MARKER_START_ENABLED;
+            Stato = State.IDLE_NOTE_FIRST_MARKER_START_ENABLED;
 
         }
 
         public void OpenSubMarker()
         {
-            creatingSubMarker = new Marker
+            CreatingSubMarker = new Marker
             {
-                startPosition = actualSliderPosition,
-                index = creatingMarker.index
+                startPosition = ActualSliderPosition,
+                index = CreatingMarker.index
             };
 
-            stato = State.SUB_MARKER_INVALID;
+            Stato = State.SUB_MARKER_INVALID;
         }
 
         public void CloseSubMarker()
         {
-            creatingSubMarker.stopPosition = actualSliderPosition;
-            creatingMarker.subMarkers.Add(creatingSubMarker);
-            creatingSubMarker = null;
+            CreatingSubMarker.stopPosition = ActualSliderPosition;
+            CreatingMarker.subMarkers.Add(CreatingSubMarker);
+            CreatingSubMarker = null;
 
-            stato = State.SUB_MARKER_CLOSED;
-
+            Stato = State.SUB_MARKER_CLOSED;
         }
-
 
         public void CheckConditions()
         {
-
             
             int tempMarkerWidth = 0;
             int tempSubMarkerWidth = 0;
             bool condition;
 
             // Calculate theoretical length of currently markers being built
-            if (creatingMarker != null)
+            if (CreatingMarker != null)
             {
-                tempMarkerWidth = actualSliderPosition - creatingMarker.startPosition;
+                tempMarkerWidth = ActualSliderPosition - CreatingMarker.startPosition;
             }
-            if (creatingSubMarker != null)
+            if (CreatingSubMarker != null)
             {
-                tempSubMarkerWidth = actualSliderPosition - creatingSubMarker.startPosition;
+                tempSubMarkerWidth = ActualSliderPosition - CreatingSubMarker.startPosition;
             }
                         
 
-            switch (stato)
+            switch (Stato)
             {
 
                 case State.IDLE:
@@ -133,64 +127,64 @@ namespace ProrobTest
                     break;
                 case State.MARKER_NOT_VALID:
 
-                    if (markerList.Count == 0)
+                    if (MarkerList.Count == 0)
                     {
                         condition = tempMarkerWidth > 0;
                     }
                     else
                     {
-                        condition = tempMarkerWidth > 0 && actualSliderPosition > markerList.Last().stopPosition;
+                        condition = tempMarkerWidth > 0 && ActualSliderPosition > MarkerList.Last().stopPosition;
                     }
 
                     if (condition)
                     {
-                        stato = State.MARKER_VALID;
+                        Stato = State.MARKER_VALID;
                     }
                     break;
 
                 case State.MARKER_VALID:
 
-                    if (markerList.Count == 0)
+                    if (MarkerList.Count == 0)
                     {
                         condition = tempMarkerWidth <= 0;
                     }
                     else
                     {
-                        condition = tempMarkerWidth <= 0 || actualSliderPosition < markerList.Last().stopPosition;
+                        condition = tempMarkerWidth <= 0 || ActualSliderPosition < MarkerList.Last().stopPosition;
                     }
 
                     if (condition)
                     {
-                        stato = State.MARKER_NOT_VALID;
+                        Stato = State.MARKER_NOT_VALID;
                     }
                     break;
 
                 case State.IDLE_NOTE_FIRST_MARKER_START_ENABLED:
 
-                    if (actualSliderPosition <= markerList.Last().startPosition)
+                    if (ActualSliderPosition <= MarkerList.Last().startPosition)
                     {
-                        stato = State.IDLE_NOT_FIRST_MARKER;
+                        Stato = State.IDLE_NOT_FIRST_MARKER;
                     }
 
-                    if (actualSliderPosition >= markerList.Last().stopPosition + markersDistance)
+                    if (ActualSliderPosition >= MarkerList.Last().stopPosition + MarkersDistance)
                     {
                         //Automatic Marker Start
-                        AutoOpenMarker(markerList.Last().stopPosition + markersDistance);
+                        AutoOpenMarker(MarkerList.Last().stopPosition + MarkersDistance);
                     }
                     break;
 
                 case State.IDLE_NOT_FIRST_MARKER:
 
-                    if (actualSliderPosition > markerList.Last().startPosition)
+                    if (ActualSliderPosition > MarkerList.Last().startPosition)
                     {
-                        stato = State.IDLE_NOTE_FIRST_MARKER_START_ENABLED;
+                        Stato = State.IDLE_NOTE_FIRST_MARKER_START_ENABLED;
                     }
                     break;
 
                 case State.SUB_MARKER_INVALID:
                     if (tempSubMarkerWidth > 0)
                     {
-                        stato = State.SUB_MARKER_VALID;
+                        Stato = State.SUB_MARKER_VALID;
                     }
                     break;
 
@@ -198,47 +192,47 @@ namespace ProrobTest
 
                     if (tempSubMarkerWidth <= 0)
                     {
-                        stato = State.SUB_MARKER_INVALID;
+                        Stato = State.SUB_MARKER_INVALID;
                     }
                     break;
 
                 case State.SUB_MARKER_CLOSED:
 
-                    if (actualSliderPosition >= creatingMarker.subMarkers.Last().stopPosition)
+                    if (ActualSliderPosition >= CreatingMarker.subMarkers.Last().stopPosition)
                     {
-                        stato = State.VALID_MARKER_WITH_SUBMARKERS;
+                        Stato = State.VALID_MARKER_WITH_SUBMARKERS;
                     }
                     else
                     {
-                        stato = State.INVALID_MARKER_WITH_SUBMARKERS;
+                        Stato = State.INVALID_MARKER_WITH_SUBMARKERS;
                     }
                     break;
 
                 case State.VALID_MARKER_WITH_SUBMARKERS:
 
-                    if (actualSliderPosition < creatingMarker.subMarkers.Last().stopPosition)
+                    if (ActualSliderPosition < CreatingMarker.subMarkers.Last().stopPosition)
                     {
-                        stato = State.INVALID_MARKER_WITH_SUBMARKERS;
+                        Stato = State.INVALID_MARKER_WITH_SUBMARKERS;
                     }
                     break;
 
                 case State.INVALID_MARKER_WITH_SUBMARKERS:
 
-                    if (actualSliderPosition >= creatingMarker.subMarkers.Last().stopPosition)
+                    if (ActualSliderPosition >= CreatingMarker.subMarkers.Last().stopPosition)
                     {
-                        stato = State.VALID_MARKER_WITH_SUBMARKERS;
+                        Stato = State.VALID_MARKER_WITH_SUBMARKERS;
                     }
-                    else if (actualSliderPosition <= creatingMarker.subMarkers.Last().startPosition)
+                    else if (ActualSliderPosition <= CreatingMarker.subMarkers.Last().startPosition)
                     {
-                        stato = State.INVALID_MARKER_AND_SUBMARKER;
+                        Stato = State.INVALID_MARKER_AND_SUBMARKER;
                     }
                     break;
 
                 case State.INVALID_MARKER_AND_SUBMARKER:
 
-                    if (actualSliderPosition > creatingMarker.subMarkers.Last().startPosition)
+                    if (ActualSliderPosition > CreatingMarker.subMarkers.Last().startPosition)
                     {
-                        stato = State.INVALID_MARKER_WITH_SUBMARKERS;
+                        Stato = State.INVALID_MARKER_WITH_SUBMARKERS;
                     }
                     break;
 

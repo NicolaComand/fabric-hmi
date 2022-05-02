@@ -26,8 +26,9 @@ namespace ProrobTest
         public void InitializeMarkerCreator()
         {
             MarkerCreator = new MarkerCreatorClass(customTrackBar.Value);
-            
+
             // Add Observers
+            _observerList.Add(sliderPositionLabel);
             _observerList.Add(sliderPositionLabel1);
             _observerList.Add(currentPositionLabel);
             _observerList.Add(cursorPanel);
@@ -53,7 +54,7 @@ namespace ProrobTest
 
         private void sliderSetPosition_Scroll(object sender, EventArgs e)
         {
-            MarkerCreator.actualSliderPosition = ((System.Windows.Forms.TrackBar)sender).Value;
+            MarkerCreator.ActualSliderPosition = ((System.Windows.Forms.TrackBar)sender).Value;
         }
 
         private void buttonAperturaMarcatore_Click(object sender, EventArgs e)
@@ -107,7 +108,7 @@ namespace ProrobTest
 
                 List<ExportMarker> exportList = new List<ExportMarker>();
 
-                foreach (Marker m in MarkerCreator.markerList)
+                foreach (Marker m in MarkerCreator.MarkerList)
                 {
                     exportList.Add(new ExportMarker(m));
                 }

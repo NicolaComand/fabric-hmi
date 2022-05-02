@@ -8,12 +8,12 @@ namespace ProrobTest.CustomControls
 {
     class AnnullaButton : CustomButton, IObserver
     {
-        public void Update(Observable observable, int e)
+        public void Update(Observable observable)
         {
             bool enabled = true;
             MarkerCreatorClass markerCreator = (MarkerCreatorClass)observable;
 
-            switch (markerCreator.stato)
+            switch (markerCreator.Stato)
             {
                 case MarkerCreatorClass.State.IDLE:
                     break;

@@ -10,15 +10,15 @@ namespace ProrobTest.CustomControls
 {
     class TotalLengthLabel : InfoLabel, IObserver
     {
-        public void Update(Observable from, int e)
+        public void Update(Observable from)
         {
             MarkerCreatorClass markerCreator = (MarkerCreatorClass)from;
 
             int totalLength;
 
-            if (markerCreator.markerList.Count != 0)
+            if (markerCreator.MarkerList.Count != 0)
             {
-                totalLength = markerCreator.markerList.Last().stopPosition - markerCreator.markerList.First().startPosition;
+                totalLength = markerCreator.MarkerList.Last().stopPosition - markerCreator.MarkerList.First().startPosition;
             }
             else
             {

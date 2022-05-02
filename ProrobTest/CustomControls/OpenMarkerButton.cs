@@ -5,12 +5,12 @@ namespace ProrobTest.CustomControls
 {
     class OpenMarkerButton : CustomButton, IObserver
     {
-        public void Update(Observable observable, int e)
+        public void Update(Observable observable)
         {
             bool enabled = false;
             MarkerCreatorClass markerCreator = (MarkerCreatorClass)observable;
 
-            switch (markerCreator.stato)
+            switch (markerCreator.Stato)
             {
                 case MarkerCreatorClass.State.IDLE:
                     enabled = true;

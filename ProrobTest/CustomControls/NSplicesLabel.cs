@@ -8,13 +8,13 @@ namespace ProrobTest.CustomControls
 {
     class NSplicesLabel: InfoLabel,IObserver
     {
-        public void Update(Observable from, int e)
+        public void Update(Observable from)
         {
             MarkerCreatorClass markerCreator = (MarkerCreatorClass)from;
 
-            if (markerCreator.creatingMarker != null)
+            if (markerCreator.CreatingMarker != null)
             {
-                this.UpdateProperty(markerCreator.creatingMarker.subMarkers.Count().ToString());
+                this.UpdateProperty(markerCreator.CreatingMarker.subMarkers.Count().ToString());
             }
             else
             {

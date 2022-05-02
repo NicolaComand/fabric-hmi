@@ -2,11 +2,11 @@
 {
     class CurrentPositionLabel : InfoLabel, IObserver
     {
-        public void Update(Observable from, int e)
+        public void Update(Observable from)
         {
             MarkerCreatorClass markerCreator = (MarkerCreatorClass)from;
 
-            this.UpdateProperty(markerCreator.currentPosition.ToString());
+            this.UpdateProperty(markerCreator.CurrentPosition.ToString());
         }
     }
 }

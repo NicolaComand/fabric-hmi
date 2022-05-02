@@ -17,10 +17,10 @@ namespace ProrobTest
             this.DoubleBuffered = true;
         }
 
-        public void Update(Observable from, int e)
+        public void Update(Observable from)
         {
             markerCreator = (MarkerCreatorClass)from;
-            maxPosition = markerCreator.maximumPosition;
+            maxPosition = markerCreator.MaximumPosition;
 
             // Redraw control
             this.Invalidate();
@@ -34,19 +34,19 @@ namespace ProrobTest
 
         private void DrawStartCursor(PaintEventArgs e)
         {
-            if (markerCreator.markerList.Count() == 0)
+            if (markerCreator.MarkerList.Count() == 0)
             {
                 return;
             }
 
-            int startPosition = markerCreator.markerList.Min(m => m.startPosition);
+            int startPosition = markerCreator.MarkerList.Min(m => m.startPosition);
             DrawTriangle(e, startPosition, Color.Green);
 
         }
 
         private void DrawCurrentCursor(PaintEventArgs e)
         {
-            DrawTriangle(e, markerCreator.actualSliderPosition, Color.Red);
+            DrawTriangle(e, markerCreator.ActualSliderPosition, Color.Red);
         }
 
         private void DrawTriangle(PaintEventArgs e, int position, Color color)

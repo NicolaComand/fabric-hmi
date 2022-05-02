@@ -5,7 +5,7 @@ namespace ProrobTest
 {
     public interface IObserver
     {
-        void Update(Observable observable, int e);
+        void Update(Observable observable);
     }
 
     public abstract class Observable
@@ -26,7 +26,7 @@ namespace ProrobTest
         {
             for (var i = 0; i < observers.Count; i++)
             {
-                observers[i].Update(this, e);
+                observers[i].Update(this);
             }
         }
     }

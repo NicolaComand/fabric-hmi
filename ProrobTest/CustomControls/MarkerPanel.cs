@@ -16,10 +16,10 @@ namespace ProrobTest
             this.DoubleBuffered = true;
         }
 
-        public void Update(Observable from, int e)
+        public void Update(Observable from)
         {
             markerCreator = (MarkerCreatorClass)from;
-            maxPosition = markerCreator.maximumPosition;
+            maxPosition = markerCreator.MaximumPosition;
 
             // Redraw control
             this.Invalidate();
@@ -34,7 +34,7 @@ namespace ProrobTest
 
         private void DrawCurrentMarkers(PaintEventArgs e)
         {
-            foreach (Marker m in markerCreator.markerList)
+            foreach (Marker m in markerCreator.MarkerList)
             {
                 DrawRectangle(e, m.startPosition, m.stopPosition);
                 foreach (Marker subm in m.subMarkers)
@@ -47,13 +47,13 @@ namespace ProrobTest
 
         private void DrawCurrentBuildingMarker(PaintEventArgs e)
         {
-            if (markerCreator.creatingMarker == null)
+            if (markerCreator.CreatingMarker == null)
             {
                 return;
             }            
 
             // Draw submarkers
-            foreach (Marker subm in markerCreator.creatingMarker.subMarkers)
+            foreach (Marker subm in markerCreator.CreatingMarker.subMarkers)
             {
                 DrawRectangle(e, subm.startPosition, subm.stopPosition, 20, CustomColors.ShadedRed);
 
@@ -66,17 +66,17 @@ namespace ProrobTest
 
         public void DrawCurrentStart(PaintEventArgs e)
         {
-            if (markerCreator.creatingMarker != null)
+            if (markerCreator.CreatingMarker != null)
             {                
-                DrawLine(e, markerCreator.creatingMarker.startPosition, 3);
+                DrawLine(e, markerCreator.CreatingMarker.startPosition, 3);
             }
         }
 
         private void DrawCurrentSubMarkerStart(PaintEventArgs e)
         {
-            if (markerCreator.creatingSubMarker != null)
+            if (markerCreator.CreatingSubMarker != null)
             {
-                DrawLine(e, markerCreator.creatingSubMarker.startPosition, 1);
+                DrawLine(e, markerCreator.CreatingSubMarker.startPosition, 1);
             }
         }
 
