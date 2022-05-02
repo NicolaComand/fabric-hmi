@@ -11,40 +11,38 @@ namespace ProrobTest.CustomControls
         public void Update(Observable observable, int e)
         {
             bool enabled = false;
-            MarkerCreator markerCreator = (MarkerCreator)observable;
-
+            MarkerCreatorClass markerCreator = (MarkerCreatorClass)observable;
 
             switch (markerCreator.stato)
             {
-                case MarkerCreator.State.IDLE:
+                case MarkerCreatorClass.State.IDLE:
                     break;
-                case MarkerCreator.State.MARKER_NOT_VALID:
+                case MarkerCreatorClass.State.MARKER_NOT_VALID:
                     break;
-                case MarkerCreator.State.MARKER_VALID:
+                case MarkerCreatorClass.State.MARKER_VALID:
                     enabled = true;
                     break;
-                case MarkerCreator.State.IDLE_NOT_FIRST_MARKER:
+                case MarkerCreatorClass.State.IDLE_NOT_FIRST_MARKER:
                     break;
-                case MarkerCreator.State.IDLE_NOTE_FIRST_MARKER_START_ENABLED:
+                case MarkerCreatorClass.State.IDLE_NOTE_FIRST_MARKER_START_ENABLED:
                     break;
-                case MarkerCreator.State.SUB_MARKER_ENABLE_START:
+                case MarkerCreatorClass.State.SUB_MARKER_ENABLE_START:
                     break;
-                case MarkerCreator.State.SUB_MARKER_INVALID:
+                case MarkerCreatorClass.State.SUB_MARKER_INVALID:
                     break;
-                case MarkerCreator.State.SUB_MARKER_VALID:
+                case MarkerCreatorClass.State.SUB_MARKER_VALID:
                     break;
-                case MarkerCreator.State.SUB_MARKER_CLOSED:
+                case MarkerCreatorClass.State.SUB_MARKER_CLOSED:
                     break;
-                case MarkerCreator.State.VALID_MARKER_WITH_SUBMARKERS:
+                case MarkerCreatorClass.State.VALID_MARKER_WITH_SUBMARKERS:
                     enabled = true;
                     break;
-                case MarkerCreator.State.INVALID_MARKER_WITH_SUBMARKERS:
+                case MarkerCreatorClass.State.INVALID_MARKER_WITH_SUBMARKERS:
                     enabled = true;
                     break;
                 default:
                     break;
             }
-
 
             this.UpdateProperty(enabled);
         }

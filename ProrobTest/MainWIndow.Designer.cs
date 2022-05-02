@@ -35,6 +35,7 @@ namespace ProrobTest
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.exitButton = new System.Windows.Forms.Button();
+            this.watchLabel1 = new ProrobTest.WatchLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,9 +43,15 @@ namespace ProrobTest
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.closeMarkerButton = new ProrobTest.CustomControls.CloseMarkerButton();
+            this.closeSubMarkerButton = new ProrobTest.CustomControls.CloseSubMarkerButton();
+            this.openMarkerButton = new ProrobTest.CustomControls.OpenMarkerButton();
+            this.openSubMarkerButton = new ProrobTest.CustomControls.OpenSubMarkerButton();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.annullaButton = new ProrobTest.CustomControls.AnnullaButton();
+            this.confirmButton = new ProrobTest.CustomControls.ConfirmButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -55,18 +62,11 @@ namespace ProrobTest
             this.nMarkerLabel = new ProrobTest.CustomControls.NMarkerLabel();
             this.nSplicesLabel = new ProrobTest.CustomControls.NSplicesLabel();
             this.currentPositionLabel = new ProrobTest.CurrentPositionLabel();
-            this.watchLabel1 = new ProrobTest.WatchLabel();
             this.debugStateLabel = new ProrobTest.DebugStateLabel();
             this.markerPanel = new ProrobTest.MarkerPanel();
             this.cursorPanel = new ProrobTest.CursorPanel();
             this.sliderPositionLabel1 = new ProrobTest.SliderPositionLabel();
             this.sliderPositionLabel = new ProrobTest.SliderPositionLabel();
-            this.closeMarkerButton = new ProrobTest.CustomControls.CloseMarkerButton();
-            this.closeSubMarkerButton = new ProrobTest.CustomControls.CloseSubMarkerButton();
-            this.openMarkerButton = new ProrobTest.CustomControls.OpenMarkerButton();
-            this.openSubMarkerButton = new ProrobTest.CustomControls.OpenSubMarkerButton();
-            this.annullaButton = new ProrobTest.CustomControls.AnnullaButton();
-            this.confirmButton = new ProrobTest.CustomControls.ConfirmButton();
             this.customTrackBar = new ProrobTest.CustomTrackBar();
             this.markersLength1 = new ProrobTest.CustomControls.MarkersLength();
             this.panel1.SuspendLayout();
@@ -133,6 +133,17 @@ namespace ProrobTest
             this.exitButton.TabIndex = 2;
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // watchLabel1
+            // 
+            this.watchLabel1.AutoSize = true;
+            this.watchLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.watchLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
+            this.watchLabel1.Location = new System.Drawing.Point(1181, 30);
+            this.watchLabel1.Name = "watchLabel1";
+            this.watchLabel1.Size = new System.Drawing.Size(91, 26);
+            this.watchLabel1.TabIndex = 1;
+            this.watchLabel1.Text = "9:54:34";
             // 
             // pictureBox1
             // 
@@ -208,6 +219,54 @@ namespace ProrobTest
             this.panel2.Size = new System.Drawing.Size(1120, 164);
             this.panel2.TabIndex = 24;
             // 
+            // closeMarkerButton
+            // 
+            this.closeMarkerButton.FlatAppearance.BorderSize = 0;
+            this.closeMarkerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeMarkerButton.Image = ((System.Drawing.Image)(resources.GetObject("closeMarkerButton.Image")));
+            this.closeMarkerButton.Location = new System.Drawing.Point(976, 31);
+            this.closeMarkerButton.Name = "closeMarkerButton";
+            this.closeMarkerButton.Size = new System.Drawing.Size(100, 100);
+            this.closeMarkerButton.TabIndex = 14;
+            this.closeMarkerButton.UseVisualStyleBackColor = true;
+            this.closeMarkerButton.Click += new System.EventHandler(this.buttonChiusuraMarcatore_Click);
+            // 
+            // closeSubMarkerButton
+            // 
+            this.closeSubMarkerButton.FlatAppearance.BorderSize = 0;
+            this.closeSubMarkerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeSubMarkerButton.Image = ((System.Drawing.Image)(resources.GetObject("closeSubMarkerButton.Image")));
+            this.closeSubMarkerButton.Location = new System.Drawing.Point(667, 31);
+            this.closeSubMarkerButton.Name = "closeSubMarkerButton";
+            this.closeSubMarkerButton.Size = new System.Drawing.Size(100, 100);
+            this.closeSubMarkerButton.TabIndex = 15;
+            this.closeSubMarkerButton.UseVisualStyleBackColor = true;
+            this.closeSubMarkerButton.Click += new System.EventHandler(this.buttonChiusuraSottoMarcatore_Click);
+            // 
+            // openMarkerButton
+            // 
+            this.openMarkerButton.FlatAppearance.BorderSize = 0;
+            this.openMarkerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openMarkerButton.Image = ((System.Drawing.Image)(resources.GetObject("openMarkerButton.Image")));
+            this.openMarkerButton.Location = new System.Drawing.Point(49, 31);
+            this.openMarkerButton.Name = "openMarkerButton";
+            this.openMarkerButton.Size = new System.Drawing.Size(100, 100);
+            this.openMarkerButton.TabIndex = 12;
+            this.openMarkerButton.UseVisualStyleBackColor = true;
+            this.openMarkerButton.Click += new System.EventHandler(this.buttonAperturaMarcatore_Click);
+            // 
+            // openSubMarkerButton
+            // 
+            this.openSubMarkerButton.FlatAppearance.BorderSize = 0;
+            this.openSubMarkerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openSubMarkerButton.Image = ((System.Drawing.Image)(resources.GetObject("openSubMarkerButton.Image")));
+            this.openSubMarkerButton.Location = new System.Drawing.Point(358, 31);
+            this.openSubMarkerButton.Name = "openSubMarkerButton";
+            this.openSubMarkerButton.Size = new System.Drawing.Size(100, 100);
+            this.openSubMarkerButton.TabIndex = 13;
+            this.openSubMarkerButton.UseVisualStyleBackColor = true;
+            this.openSubMarkerButton.Click += new System.EventHandler(this.buttonAperturaSottoMarcatore_Click);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -237,6 +296,30 @@ namespace ProrobTest
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(277, 116);
             this.panel3.TabIndex = 25;
+            // 
+            // annullaButton
+            // 
+            this.annullaButton.FlatAppearance.BorderSize = 0;
+            this.annullaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.annullaButton.Image = global::ProrobTest.Properties.Resources.ButtonAnnulla;
+            this.annullaButton.Location = new System.Drawing.Point(151, 8);
+            this.annullaButton.Name = "annullaButton";
+            this.annullaButton.Size = new System.Drawing.Size(100, 100);
+            this.annullaButton.TabIndex = 17;
+            this.annullaButton.UseVisualStyleBackColor = true;
+            this.annullaButton.Click += new System.EventHandler(this.buttonAnnulla_Click);
+            // 
+            // confirmButton
+            // 
+            this.confirmButton.FlatAppearance.BorderSize = 0;
+            this.confirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirmButton.Image = global::ProrobTest.Properties.Resources.ButtonConfirm;
+            this.confirmButton.Location = new System.Drawing.Point(29, 8);
+            this.confirmButton.Name = "confirmButton";
+            this.confirmButton.Size = new System.Drawing.Size(100, 100);
+            this.confirmButton.TabIndex = 16;
+            this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
             // panel4
             // 
@@ -335,17 +418,6 @@ namespace ProrobTest
             this.currentPositionLabel.TabIndex = 27;
             this.currentPositionLabel.Text = "4000";
             // 
-            // watchLabel1
-            // 
-            this.watchLabel1.AutoSize = true;
-            this.watchLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.watchLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
-            this.watchLabel1.Location = new System.Drawing.Point(1181, 30);
-            this.watchLabel1.Name = "watchLabel1";
-            this.watchLabel1.Size = new System.Drawing.Size(91, 26);
-            this.watchLabel1.TabIndex = 1;
-            this.watchLabel1.Text = "9:18:01";
-            // 
             // debugStateLabel
             // 
             this.debugStateLabel.AutoSize = true;
@@ -355,6 +427,7 @@ namespace ProrobTest
             this.debugStateLabel.Size = new System.Drawing.Size(188, 26);
             this.debugStateLabel.TabIndex = 11;
             this.debugStateLabel.Text = "debugStateLabel1";
+            this.debugStateLabel.Visible = false;
             // 
             // markerPanel
             // 
@@ -390,78 +463,6 @@ namespace ProrobTest
             this.sliderPositionLabel.Size = new System.Drawing.Size(100, 13);
             this.sliderPositionLabel.TabIndex = 2;
             this.sliderPositionLabel.Text = "sliderPositionLabel1";
-            // 
-            // closeMarkerButton
-            // 
-            this.closeMarkerButton.FlatAppearance.BorderSize = 0;
-            this.closeMarkerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeMarkerButton.Image = ((System.Drawing.Image)(resources.GetObject("closeMarkerButton.Image")));
-            this.closeMarkerButton.Location = new System.Drawing.Point(976, 31);
-            this.closeMarkerButton.Name = "closeMarkerButton";
-            this.closeMarkerButton.Size = new System.Drawing.Size(100, 100);
-            this.closeMarkerButton.TabIndex = 14;
-            this.closeMarkerButton.UseVisualStyleBackColor = true;
-            this.closeMarkerButton.Click += new System.EventHandler(this.buttonChiusuraMarcatore_Click);
-            // 
-            // closeSubMarkerButton
-            // 
-            this.closeSubMarkerButton.FlatAppearance.BorderSize = 0;
-            this.closeSubMarkerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeSubMarkerButton.Image = ((System.Drawing.Image)(resources.GetObject("closeSubMarkerButton.Image")));
-            this.closeSubMarkerButton.Location = new System.Drawing.Point(667, 31);
-            this.closeSubMarkerButton.Name = "closeSubMarkerButton";
-            this.closeSubMarkerButton.Size = new System.Drawing.Size(100, 100);
-            this.closeSubMarkerButton.TabIndex = 15;
-            this.closeSubMarkerButton.UseVisualStyleBackColor = true;
-            this.closeSubMarkerButton.Click += new System.EventHandler(this.buttonChiusuraSottoMarcatore_Click);
-            // 
-            // openMarkerButton
-            // 
-            this.openMarkerButton.FlatAppearance.BorderSize = 0;
-            this.openMarkerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.openMarkerButton.Image = ((System.Drawing.Image)(resources.GetObject("openMarkerButton.Image")));
-            this.openMarkerButton.Location = new System.Drawing.Point(49, 31);
-            this.openMarkerButton.Name = "openMarkerButton";
-            this.openMarkerButton.Size = new System.Drawing.Size(100, 100);
-            this.openMarkerButton.TabIndex = 12;
-            this.openMarkerButton.UseVisualStyleBackColor = true;
-            this.openMarkerButton.Click += new System.EventHandler(this.buttonAperturaMarcatore_Click);
-            // 
-            // openSubMarkerButton
-            // 
-            this.openSubMarkerButton.FlatAppearance.BorderSize = 0;
-            this.openSubMarkerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.openSubMarkerButton.Image = ((System.Drawing.Image)(resources.GetObject("openSubMarkerButton.Image")));
-            this.openSubMarkerButton.Location = new System.Drawing.Point(358, 31);
-            this.openSubMarkerButton.Name = "openSubMarkerButton";
-            this.openSubMarkerButton.Size = new System.Drawing.Size(100, 100);
-            this.openSubMarkerButton.TabIndex = 13;
-            this.openSubMarkerButton.UseVisualStyleBackColor = true;
-            this.openSubMarkerButton.Click += new System.EventHandler(this.buttonAperturaSottoMarcatore_Click);
-            // 
-            // annullaButton
-            // 
-            this.annullaButton.FlatAppearance.BorderSize = 0;
-            this.annullaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.annullaButton.Image = global::ProrobTest.Properties.Resources.ButtonAnnulla;
-            this.annullaButton.Location = new System.Drawing.Point(151, 8);
-            this.annullaButton.Name = "annullaButton";
-            this.annullaButton.Size = new System.Drawing.Size(100, 100);
-            this.annullaButton.TabIndex = 17;
-            this.annullaButton.UseVisualStyleBackColor = true;
-            this.annullaButton.Click += new System.EventHandler(this.buttonAnnulla_Click);
-            // 
-            // confirmButton
-            // 
-            this.confirmButton.FlatAppearance.BorderSize = 0;
-            this.confirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.confirmButton.Image = global::ProrobTest.Properties.Resources.ButtonConfirm;
-            this.confirmButton.Location = new System.Drawing.Point(29, 8);
-            this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(100, 100);
-            this.confirmButton.TabIndex = 16;
-            this.confirmButton.UseVisualStyleBackColor = true;
-            this.confirmButton.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
             // customTrackBar
             // 

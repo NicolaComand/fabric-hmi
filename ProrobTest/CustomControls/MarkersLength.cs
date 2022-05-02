@@ -10,7 +10,7 @@ namespace ProrobTest.CustomControls
     {
         public void Update(Observable from, int e)
         {
-            MarkerCreator markerCreator = (MarkerCreator)from;
+            MarkerCreatorClass markerCreator = (MarkerCreatorClass)from;
 
             int markersLength = markerCreator.markerList.Sum(m => m.stopPosition - m.startPosition);
 

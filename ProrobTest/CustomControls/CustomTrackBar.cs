@@ -4,7 +4,6 @@ namespace ProrobTest
 {
     public class CustomTrackBar : System.Windows.Forms.TrackBar, IObserver
     {
-
         private delegate void _UpdateProperty(int maxValue);
         protected void UpdateProperty(int maxValue)
         {
@@ -21,7 +20,7 @@ namespace ProrobTest
 
         public void Update(Observable observable, int e)
         {
-            MarkerCreator markerCreator = (MarkerCreator)observable;
+            MarkerCreatorClass markerCreator = (MarkerCreatorClass)observable;
 
             this.UpdateProperty(markerCreator.maximumPosition);
         }

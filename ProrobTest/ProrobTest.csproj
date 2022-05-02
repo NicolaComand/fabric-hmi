@@ -142,7 +142,7 @@
       <DependentUpon>MainWIndow.cs</DependentUpon>
     </Compile>
     <Compile Include="Marker.cs" />
-    <Compile Include="MarkerCreator.cs" />
+    <Compile Include="MarkerCreatorClass.cs" />
     <Compile Include="Observer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

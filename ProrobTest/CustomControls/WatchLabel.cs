@@ -6,9 +6,7 @@ namespace ProrobTest
     public class WatchLabel : System.Windows.Forms.Label
     {
         private Timer timer = new Timer(1000);
-
         private delegate void _UpdateProperty(string infoText);
-
 
         public WatchLabel()
         {
@@ -37,9 +35,5 @@ namespace ProrobTest
         {
             UpdateProperty(DateTime.Now.ToString("h:mm:ss"));
         }
-
-
-
-
     }
 }

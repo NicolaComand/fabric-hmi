@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ProrobTest
-{
- 
+{ 
     class CustomButton : System.Windows.Forms.Button
     {
         private delegate void _UpdateProperty(bool isEnabled);
@@ -21,8 +20,6 @@ namespace ProrobTest
             }
 
             this.Enabled = isEnabled;
-        }
-
-        
+        }        
     }
 }

@@ -8,10 +8,9 @@ namespace ProrobTest.CustomControls
 {
     class NMarkerLabel: InfoLabel, IObserver
     {
-
         public void Update(Observable from, int e)
         {
-            MarkerCreator markerCreator = (MarkerCreator)from;
+            MarkerCreatorClass markerCreator = (MarkerCreatorClass)from;
 
             this.UpdateProperty(markerCreator.markerList.Count().ToString());
         }

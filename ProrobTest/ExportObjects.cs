@@ -39,8 +39,7 @@ namespace ProrobTest
             MarkerIndex = submarker.index;
             Start = submarker.startPosition;
             Stop = submarker.stopPosition;
-        }
-        
+        }       
        
     }
 }

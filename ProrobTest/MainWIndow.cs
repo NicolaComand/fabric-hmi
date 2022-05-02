@@ -14,25 +14,20 @@ namespace ProrobTest
 {
     public partial class MainWIndow : Form
     {
-        List<Marker> markerList = new List<Marker>();
-        MarkerCreator markerCreator;
-
         List<IObserver> _observerList = new List<IObserver>();
+        MarkerCreatorClass MarkerCreator;        
 
-        public MainWIndow()      {
-            
-
+        public MainWIndow()
+        {         
             InitializeComponent();
             InitializeMarkerCreator();
-
-
         }
 
         public void InitializeMarkerCreator()
         {
-            markerCreator = new MarkerCreator(customTrackBar.Value);
+            MarkerCreator = new MarkerCreatorClass(customTrackBar.Value);
+            
             // Add Observers
-
             _observerList.Add(sliderPositionLabel1);
             _observerList.Add(currentPositionLabel);
             _observerList.Add(cursorPanel);
@@ -50,48 +45,56 @@ namespace ProrobTest
             _observerList.Add(totalLengthLabel);
             _observerList.Add(markersLength1);
 
-            _observerList.ForEach(observer => markerCreator.Add(ref observer));
-            markerCreator.NotifyObservers(0);
+            _observerList.ForEach(observer => MarkerCreator.Add(ref observer));
+
+            // Do first update
+            MarkerCreator.NotifyObservers(0);
         }
-
-
 
         private void sliderSetPosition_Scroll(object sender, EventArgs e)
         {
-            // Set the scroll value in the marker generator class
-            markerCreator.actualSliderPosition = ((System.Windows.Forms.TrackBar)sender).Value;
-            //pictureBox1.Invoke((MethodInvoker)delegate { pictureBox1.Refresh(); });
+            MarkerCreator.actualSliderPosition = ((System.Windows.Forms.TrackBar)sender).Value;
         }
 
         private void buttonAperturaMarcatore_Click(object sender, EventArgs e)
         {
-            markerCreator.OpenMarker();
+            MarkerCreator.OpenMarker();
         }
 
         private void buttonChiusuraMarcatore_Click(object sender, EventArgs e)
         {
-            markerCreator.CloseMarker();
+            MarkerCreator.CloseMarker();
         }
 
         private void buttonAperturaSottoMarcatore_Click(object sender, EventArgs e)
         {
-            markerCreator.OpenSubMarker();
+            MarkerCreator.OpenSubMarker();
         }
 
         private void buttonChiusuraSottoMarcatore_Click(object sender, EventArgs e)
         {
-            markerCreator.CloseSubMarker();
+            MarkerCreator.CloseSubMarker();
         }
 
         private void buttonAnnulla_Click(object sender, EventArgs e)
         {
-            this.InitializeMarkerCreator();
-            
+            this.InitializeMarkerCreator();            
         }
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
+            ExportToJson();
+        }
 
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
+        private void ExportToJson()
+        {
             SaveFileDialog saveDialog = new SaveFileDialog();
 
             saveDialog.FileName = "Ricetta.json";
@@ -104,7 +107,7 @@ namespace ProrobTest
 
                 List<ExportMarker> exportList = new List<ExportMarker>();
 
-                foreach ( Marker m in markerCreator.markerList)
+                foreach (Marker m in MarkerCreator.markerList)
                 {
                     exportList.Add(new ExportMarker(m));
                 }
@@ -119,14 +122,6 @@ namespace ProrobTest
                 writer.Close();
 
             }
-
-
-
-        }
-
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
     }

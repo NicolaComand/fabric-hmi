@@ -4,7 +4,7 @@
     {
         public void Update(Observable from, int e)
         {
-            MarkerCreator markerCreator = (MarkerCreator)from;
+            MarkerCreatorClass markerCreator = (MarkerCreatorClass)from;
 
             this.UpdateProperty(markerCreator.currentPosition.ToString());
         }
