@@ -33,9 +33,7 @@ namespace ProrobTest
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.exitButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.watchLabel1 = new ProrobTest.WatchLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,9 +44,6 @@ namespace ProrobTest
             this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.markersLength1 = new ProrobTest.CustomControls.MarkersLength();
@@ -56,29 +51,34 @@ namespace ProrobTest
             this.nMarkerLabel = new ProrobTest.CustomControls.NMarkerLabel();
             this.nSplicesLabel = new ProrobTest.CustomControls.NSplicesLabel();
             this.currentPositionLabel = new ProrobTest.CurrentPositionLabel();
-            this.watchLabel1 = new ProrobTest.WatchLabel();
             this.debugStateLabel = new ProrobTest.DebugStateLabel();
             this.markerPanel = new ProrobTest.MarkerPanel();
             this.cursorPanel = new ProrobTest.CursorPanel();
             this.sliderPositionLabel1 = new ProrobTest.SliderPositionLabel();
             this.sliderPositionLabel = new ProrobTest.SliderPositionLabel();
+            this.customTrackBar = new ProrobTest.CustomTrackBar();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.closeMarkerButton = new ProrobTest.CustomControls.CloseMarkerButton();
             this.closeSubMarkerButton = new ProrobTest.CustomControls.CloseSubMarkerButton();
             this.openMarkerButton = new ProrobTest.CustomControls.OpenMarkerButton();
             this.openSubMarkerButton = new ProrobTest.CustomControls.OpenSubMarkerButton();
             this.annullaButton = new ProrobTest.CustomControls.AnnullaButton();
             this.confirmButton = new ProrobTest.CustomControls.ConfirmButton();
-            this.customTrackBar = new ProrobTest.CustomTrackBar();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -113,35 +113,16 @@ namespace ProrobTest
             this.panel1.Size = new System.Drawing.Size(1302, 87);
             this.panel1.TabIndex = 21;
             // 
-            // pictureBox4
+            // watchLabel1
             // 
-            this.pictureBox4.Image = global::ProrobTest.Properties.Resources.UpperControls;
-            this.pictureBox4.Location = new System.Drawing.Point(521, 13);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(519, 66);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            // 
-            // exitButton
-            // 
-            this.exitButton.FlatAppearance.BorderSize = 0;
-            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Image = global::ProrobTest.Properties.Resources.ButtonUscita;
-            this.exitButton.Location = new System.Drawing.Point(1104, 19);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(54, 48);
-            this.exitButton.TabIndex = 2;
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ProrobTest.Properties.Resources.LogoCaron;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(231, 62);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.watchLabel1.AutoSize = true;
+            this.watchLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.watchLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
+            this.watchLabel1.Location = new System.Drawing.Point(1181, 30);
+            this.watchLabel1.Name = "watchLabel1";
+            this.watchLabel1.Size = new System.Drawing.Size(104, 26);
+            this.watchLabel1.TabIndex = 1;
+            this.watchLabel1.Text = "10:20:12";
             // 
             // label2
             // 
@@ -247,34 +228,6 @@ namespace ProrobTest
             this.panel4.Size = new System.Drawing.Size(118, 781);
             this.panel4.TabIndex = 26;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::ProrobTest.Properties.Resources.SideControls;
-            this.pictureBox5.Location = new System.Drawing.Point(3, 28);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(112, 265);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBox3.Location = new System.Drawing.Point(148, 268);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1120, 3);
-            this.pictureBox3.TabIndex = 22;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBox2.Location = new System.Drawing.Point(148, 177);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1120, 3);
-            this.pictureBox2.TabIndex = 22;
-            this.pictureBox2.TabStop = false;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -345,17 +298,6 @@ namespace ProrobTest
             this.currentPositionLabel.TabIndex = 27;
             this.currentPositionLabel.Text = "4000";
             // 
-            // watchLabel1
-            // 
-            this.watchLabel1.AutoSize = true;
-            this.watchLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.watchLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
-            this.watchLabel1.Location = new System.Drawing.Point(1181, 30);
-            this.watchLabel1.Name = "watchLabel1";
-            this.watchLabel1.Size = new System.Drawing.Size(104, 26);
-            this.watchLabel1.TabIndex = 1;
-            this.watchLabel1.Text = "10:16:18";
-            // 
             // debugStateLabel
             // 
             this.debugStateLabel.AutoSize = true;
@@ -401,6 +343,72 @@ namespace ProrobTest
             this.sliderPositionLabel.Size = new System.Drawing.Size(100, 13);
             this.sliderPositionLabel.TabIndex = 2;
             this.sliderPositionLabel.Text = "sliderPositionLabel1";
+            // 
+            // customTrackBar
+            // 
+            this.customTrackBar.Location = new System.Drawing.Point(393, 811);
+            this.customTrackBar.Name = "customTrackBar";
+            this.customTrackBar.Size = new System.Drawing.Size(603, 45);
+            this.customTrackBar.TabIndex = 18;
+            this.customTrackBar.Scroll += new System.EventHandler(this.sliderSetPosition_Scroll);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::ProrobTest.Properties.Resources.SideControls;
+            this.pictureBox5.Location = new System.Drawing.Point(3, 28);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(112, 265);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 3;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox3.Location = new System.Drawing.Point(148, 268);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1120, 3);
+            this.pictureBox3.TabIndex = 22;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox2.Location = new System.Drawing.Point(148, 177);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1120, 3);
+            this.pictureBox2.TabIndex = 22;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::ProrobTest.Properties.Resources.UpperControls;
+            this.pictureBox4.Location = new System.Drawing.Point(521, 13);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(519, 66);
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            // 
+            // exitButton
+            // 
+            this.exitButton.FlatAppearance.BorderSize = 0;
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Image = global::ProrobTest.Properties.Resources.ButtonUscita;
+            this.exitButton.Location = new System.Drawing.Point(1104, 19);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(54, 48);
+            this.exitButton.TabIndex = 2;
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProrobTest.Properties.Resources.CompanyLogo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(405, 62);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // closeMarkerButton
             // 
@@ -474,14 +482,6 @@ namespace ProrobTest
             this.confirmButton.UseVisualStyleBackColor = true;
             this.confirmButton.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
-            // customTrackBar
-            // 
-            this.customTrackBar.Location = new System.Drawing.Point(393, 811);
-            this.customTrackBar.Name = "customTrackBar";
-            this.customTrackBar.Size = new System.Drawing.Size(603, 45);
-            this.customTrackBar.TabIndex = 18;
-            this.customTrackBar.Scroll += new System.EventHandler(this.sliderSetPosition_Scroll);
-            // 
             // MainWIndow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -518,16 +518,16 @@ namespace ProrobTest
             this.Text = "9";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.customTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

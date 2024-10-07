@@ -136,16 +136,19 @@
   <data name="LogoCaron" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoCaron.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ButtonStart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ButtonStart_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ButtonUscita" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ButtonUscita.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ButtonConfirm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ButtonConfirm.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ButtonStart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ButtonStart_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="UpperControls" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UpperControls.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ButtonUscita" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ButtonUscita.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CompanyLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CompanyLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
